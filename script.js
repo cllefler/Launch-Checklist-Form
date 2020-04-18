@@ -25,13 +25,23 @@ window.addEventListener("load", function() {
       let cargoMass = document.querySelector("input[name=cargoMass]");
       if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
          alert("All fields are required!");
-      } else if (isNaN(fuelLevel.value) || isNaN(cargoMass.value) || isNaN(pilotName.value) === false || isNaN(copilotName.value) === false) {
+      } else if (isNaN(fuelLevel.value) || isNaN(cargoMass.value)) {
          alert("Make sure to enter valid information for each field!");
       }
-      // if (isNan(pilotName) === false || isNan(copilotName) === false) {
-      //    alert("Make sure to enter valid information for each field!");
-      //    event.preventDefault();
-      // }
+   });
+});
+
+window.addEventListener("load", function() {
+   let form = document.querySelector("form");
+   form.addEventListener("submit", function(event) {
+      event.stopImmediatePropagation();
+      let pilotName = document.querySelector("input[name=pilotName]");
+      let copilotName = document.querySelector("input[name=copilotName]");
+      let fuelLevel = document.querySelector("input[name=fuelLevel]");
+      let cargoMass = document.querySelector("input[name=cargoMass]");
+      if (isNaN(pilotName.value) === false || isNaN(copilotName.value) === false) {
+         alert("Make sure to enter valid information for each field!");
+      }
    });
 });
 
